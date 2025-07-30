@@ -477,116 +477,73 @@
 
 /* ===== Responsive Tablets (<= 768px) ===== */
 @media (max-width: 768px) {
-  /* Nav pasa a columna */
+  /* Nav pasa a columna y links legibles */
   nav {
     flex-direction: column;
     align-items: flex-start;
+    padding: 8px 4%;
   }
   .nav-links {
-    margin-top: 10px;
-    gap: 10px;
+    margin-top: 6px;
+    gap: 8px;
+  }
+  .nav-links a {
+    padding: 6px 10px;
+    font-size: 0.95rem;
   }
 
-  /* Hero ajusta tamaño y posición */
+  /* Hero más compacto */
   .hero-text {
-    top: 120px;
-    left: 5%;
-    right: 5%;
+    top: 100px;
+    left: 4%;
+    right: 4%;
   }
   .hero-text h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .hero-text p {
-    font-size: 1.25rem;
-    margin-top: 20px;
+    font-size: 1.1rem;
+    margin-top: 16px;
   }
   .btn-cotiza {
-    margin: 30px 0 0 0;
-    font-size: 1rem;
-    padding: 8px 16px;
+    padding: 8px 14px;
+    font-size: 0.95rem;
+    margin: 20px 0 0 0;
+    margin-left: 0;
   }
 
   /* Servicios más estrechos */
   .servicios {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px 5%;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    padding: 16px 4%;
   }
   .servicio {
-    max-width: 220px;
+    max-width: 180px;
+    padding: 12px;
   }
   .servicio img {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 6px;
+  }
+  .servicio h2 {
+    font-size: 1.2rem;
+  }
+  .servicio p {
+    font-size: 0.8rem;
   }
 
   /* Teléfono y Seguridad apilados */
   .seccion-telefono,
   .seccion-seguridad {
     flex-direction: column;
-    padding: 40px 5%;
-    gap: 20px;
+    padding: 32px 4%;
+    gap: 16px;
   }
-  .imagen-telefono img,
-  .imagen-cajas img {
-    max-width: 90%;
-    margin-left: 0;
-    margin-top: 0;
-  }
-
-  /* Marketplaces en dos líneas si hace falta */
-  .seccion-marketplaces h2 {
-    font-size: 2rem;
-  }
-  .seccion-marketplaces h3 {
-    font-size: 1.75rem;
-  }
-  .seccion-marketplaces p {
-    white-space: normal;
-    font-size: 0.9rem;
-    max-width: 90%;
-  }
-
-  /* Integraciones con logos más pequeños */
-  .integraciones-container {
-    gap: 20px;
-  }
-  .integracion-btn img {
-    max-height: 50px;
-  }
-
-  /* Modal y Whatsapp */
-  .modal-content {
-    width: 95%;
-    padding: 20px;
-  }
-  .whatsapp-float {
-    width: 60px;
-    height: 60px;
-    bottom: 10px;
-    right: 10px;
-  }
-}
-
-/* ===== Responsive Móviles (<= 480px) ===== */
-@media (max-width: 480px) {
-  /* Titulares más pequeños */
-  .hero-text h1 {
-    font-size: 1.75rem;
-  }
-  .hero-text p {
-    font-size: 1.1rem;
-  }
-
-  /* Botón cotiza compacto */
-  .btn-cotiza {
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
-
-  /* Iconos de lista más pequeños */
   .item-con-icono {
     gap: 10px;
+    margin-bottom: 12px;
   }
   .item-con-icono .icono {
     width: 36px;
@@ -595,24 +552,116 @@
   .item-con-icono p {
     font-size: 0.9rem;
   }
+  .imagen-telefono img,
+  .imagen-cajas img {
+    max-width: 100%;
+    margin-left: 0;
+    margin-top: 0;
+    transform: scale(0.9);
+  }
 
-  /* Marketplaces aún más compacto */
+  /* Marketplaces compacto */
   .seccion-marketplaces {
-    padding: 40px 5%;
+    padding: 32px 4%;
   }
   .seccion-marketplaces h2 {
-    font-size: 1.75rem;
+    font-size: 1.8rem;
   }
   .seccion-marketplaces h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   .seccion-marketplaces p {
     font-size: 0.85rem;
+    max-width: 100%;
+    white-space: normal;
   }
 
-  /* Footer y redes compacto */
+  /* Integraciones compactas */
+  .integraciones-container {
+    gap: 12px;
+    padding: 0 4%;
+  }
+  .integracion-btn {
+    padding: 10px;
+  }
+  .integracion-btn img {
+    max-height: 40px;
+  }
+
+  /* Footer y Whatsapp */
   footer {
-    padding: 20px 5%;
-    font-size: 0.9rem;
+    padding: 16px 4%;
+    font-size: 0.8rem;
+  }
+  .whatsapp-float {
+    width: 50px;
+    height: 50px;
+    bottom: 8px;
+    right: 8px;
+  }
+}
+
+/* ===== Responsive Móviles (<= 480px) ===== */
+@media (max-width: 480px) {
+  /* Nav links más pequeños */
+  .nav-links a {
+    padding: 4px 8px;
+    font-size: 0.85rem;
+  }
+
+  /* Hero aún más compacto */
+  .hero-text h1 {
+    font-size: 1.5rem;
+  }
+  .hero-text p {
+    font-size: 1rem;
+  }
+  .btn-cotiza {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  /* Teléfono y Seguridad: padding mínimo */
+  .seccion-telefono,
+  .seccion-seguridad {
+    padding: 20px 3%;
+  }
+  .item-con-icono .icono {
+    width: 30px;
+    height: 30px;
+  }
+  .item-con-icono p {
+    font-size: 0.85rem;
+  }
+
+  /* Marketplaces ultra compacto */
+  .seccion-marketplaces {
+    padding: 20px 3%;
+  }
+  .seccion-marketplaces h2 {
+    font-size: 1.6rem;
+  }
+  .seccion-marketplaces h3 {
+    font-size: 1.2rem;
+  }
+  .seccion-marketplaces p {
+    font-size: 0.75rem;
+  }
+
+  /* Integraciones super comprimidas */
+  .integraciones-container {
+    gap: 8px;
+  }
+  .integracion-btn {
+    padding: 8px;
+  }
+  .integracion-btn img {
+    max-height: 30px;
+  }
+
+  /* Footer y redes sociales */
+  footer {
+    padding: 14px 3%;
+    font-size: 0.8rem;
   }
 }
