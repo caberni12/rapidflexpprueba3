@@ -523,16 +523,20 @@
     margin: 0 auto;
     display: block;
   }
-  .imagen-telefono img,
-  .imagen-cajas img {
-    width: 90%;
-    max-width: 350px;
-    height: auto;
-    display: block;
-    margin: 20px auto !important;
-    margin-left: 0 !important;
-    margin-top: 0 !important;
+  
+    /* Imágenes de Teléfono y Caja AHORA MÁS GRANDES */
+    .imagen-telefono img,
+    .imagen-cajas img {
+      width: 100% !important;     /* ocupan todo el ancho del contenedor */
+      max-width: none !important; /* eliminamos cualquier tope */
+      height: auto;
+      display: block;
+      margin: 10px auto !important; /* centrado con un poco de espacio */
+    }
+  
+    /* … resto de tu CSS móvil … */
   }
+  
 
   /* 3) Nav-links apiladas como en mockup */
   .nav-links {
@@ -584,4 +588,148 @@
     width: 100%;
     height: auto;
   }
+
+  
+/* ===== Responsive Tablets (<= 768px) ===== */
+@media (max-width: 768px) {
+  /* Nav pasa a columna */
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    margin-top: 10px;
+    gap: 10px;
+  }
+
+  /* Hero ajusta tamaño y posición */
+  .hero-text {
+    top: 120px;
+    left: 5%;
+    right: 5%;
+  }
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text p {
+    font-size: 1.25rem;
+    margin-top: 20px;
+  }
+  .btn-cotiza {
+    margin: 30px 0 0 0;
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  /* Servicios más estrechos */
+  .servicios {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 5%;
+  }
+  .servicio {
+    max-width: 220px;
+  }
+  .servicio img {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Teléfono y Seguridad apilados */
+  .seccion-telefono,
+  .seccion-seguridad {
+    flex-direction: column;
+    padding: 40px 5%;
+    gap: 20px;
+  }
+  .imagen-telefono img,
+  .imagen-cajas img {
+    max-width: 200%;
+    margin-left: 0;
+    margin-top: 0;
+    width: auto;
+  }
+
+  /* Marketplaces en dos líneas si hace falta */
+  .seccion-marketplaces h2 {
+    font-size: 2rem;
+  }
+  .seccion-marketplaces h3 {
+    font-size: 1.75rem;
+  }
+  .seccion-marketplaces p {
+    white-space: normal;
+    font-size: 0.9rem;
+    max-width: 90%;
+  }
+
+  /* Integraciones con logos más pequeños */
+  .integraciones-container {
+    gap: 20px;
+  }
+  .integracion-btn img {
+    max-height: 50px;
+  }
+
+  /* Modal y Whatsapp */
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+  .whatsapp-float {
+    width: 60px;
+    height: 60px;
+    bottom: 10px;
+    right: 10px;
+  }
 }
+
+/* ===== Responsive Móviles (<= 480px) ===== */
+@media (max-width: 480px) {
+  /* Titulares más pequeños */
+  .hero-text h1 {
+    font-size: 1.75rem;
+  }
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  /* Botón cotiza compacto */
+  .btn-cotiza {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+
+  /* Iconos de lista más pequeños */
+  .item-con-icono {
+    gap: 10px;
+  }
+  .item-con-icono .icono {
+    width: 36px;
+    height: 36px;
+  }
+  .item-con-icono p {
+    font-size: 0.9rem;
+  }
+
+  /* Marketplaces aún más compacto */
+  .seccion-marketplaces {
+    padding: 40px 5%;
+  }
+  .seccion-marketplaces h2 {
+    font-size: 1.75rem;
+  }
+  .seccion-marketplaces h3 {
+    font-size: 1.5rem;
+  }
+  .seccion-marketplaces p {
+    font-size: 0.85rem;
+  }
+
+  /* Footer y redes compacto */
+  footer {
+    padding: 20px 5%;
+    font-size: 0.9rem;
+  }
+}
+
