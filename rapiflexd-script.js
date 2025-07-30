@@ -60,3 +60,31 @@ handleFormSubmit('repartidorForm', 'loaderRepartidor', 'modalRepartidor', script
     const menu = document.getElementById('sliderMenu');
     menu.classList.toggle('open');
   }
+
+  const burger = document.querySelector('.hamburger');
+  const links  = document.querySelector('.nav-links');
+  burger.addEventListener('click', () => {
+    links.classList.toggle('open');
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    // Aplica solo en pantallas pequeñas
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      let lastScroll = window.pageYOffset;
+      const btn = document.querySelector('.whatsapp-float');
+  
+      window.addEventListener('scroll', () => {
+        const current = window.pageYOffset;
+        if (current > lastScroll + 10) {
+          // al bajar scroll → escondemos el botón
+          btn.style.transform = 'translateY(120px)';
+          btn.style.opacity = '0';
+        } else if (current < lastScroll - 10) {
+          // al subir scroll → lo mostramos
+          btn.style.transform = 'translateY(0)';
+          btn.style.opacity = '1';
+        }
+        lastScroll = current;
+      });
+    }
+  });
+  

@@ -502,22 +502,22 @@
 .hamburger {
   display: none;
 }
+
 /* ========== AJUSTES SOLO PARA MÓVIL (<=768px) ========== */
 @media only screen and (max-width: 768px) {
-  
-  /* 1) Stack y centrar texto + imagen en las secciones de teléfono y cajas */
+  /* 1) Secciones Teléfono y Seguridad apiladas y centradas */
   .seccion-telefono,
   .seccion-seguridad {
-    flex-direction: column;      /* apila contenido y luego la imagen */
-    align-items: center;         /* centra todo */
-    padding: 40px 5%;            /* menos padding vertical */
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 5%;
   }
-  /* elimina margen extra del texto */
   .contenido-telefono,
   .contenido-seguridad {
     margin: 0 0 20px;
   }
-  /* reset de márgenes raros y centrado de la imagen */
+
+  /* 2) Imágenes de Teléfono y Caja grandes y centradas */
   .imagen-telefono,
   .imagen-cajas {
     margin: 0 auto;
@@ -525,51 +525,63 @@
   }
   .imagen-telefono img,
   .imagen-cajas img {
-    margin: 0 auto !important;   /* fuerza centro bajo el texto */
-    max-width: 90%;              /* ajusta al ancho de móvil */
+    width: 90%;
+    max-width: 350px;
     height: auto;
+    display: block;
+    margin: 20px auto !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
   }
 
-  /* 2) Botones azules superiores APILADOS y con mismo estilo que tu mockup */
+  /* 3) Nav-links apiladas como en mockup */
   .nav-links {
-    flex-direction: column !important;  /* lista vertical */
-    align-items: center !important;     /* centra cada botón */
+    flex-direction: column !important;
+    align-items: center !important;
     gap: 0.75rem;
   }
   .nav-links a {
-    width: 85%;                /* ancho adaptado al móvil */
-    max-width: 320px;          
+    width: 85%;
+    max-width: 320px;
     margin: 0.5rem 0 !important;
     padding: 0.8rem 1rem;
-    text-align: center;        
-    display: block;            
-    /* el resto de estilos (color, border-radius, font-weight…) ya lo tienes definidos */
+    text-align: center;
+    display: block;
   }
-}
 
-/* ==== Ajustes SOLO para móvil: logos 3×fila más grandes ==== */
-@media only screen and (max-width: 768px) {
+  /* 4) Logos de Integraciones: 3×fila, centrados y compactos */
   .integraciones-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 logos por fila */
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     justify-items: center;
     align-items: center;
     margin: 0 auto;
     padding: 20px 0;
   }
-
   .integracion-btn {
     width: 100%;
     max-width: 200px;
     padding: 8px;
   }
-
   .integracion-btn img {
     display: block;
     max-width: 100%;
     max-height: 180px;
     object-fit: contain;
   }
-}
 
+  /* 5) WhatsApp flotante más grande y siempre visible */
+  .whatsapp-float {
+    width: 80px;
+    height: 80px;
+    bottom: 16px;
+    right: 16px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+  }
+  .whatsapp-float img {
+    width: 100%;
+    height: auto;
+  }
+}
