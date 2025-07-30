@@ -591,18 +591,32 @@
 
   
 /* ===== Responsive Tablets (<= 768px) ===== */
-@media (max-width: 768px) {
-  /* Nav pasa a columna */
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+/* ===== Responsive Móvil/Tablet (<=768px) ===== */
+@media only screen and (max-width: 768px) {
+
+  /* 1) Menú: grid 2×2, centrado y ancho completo */
   .nav-links {
-    margin-top: 10px;
-    gap: 10px;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+    justify-items: center !important;
+    align-items: center !important;
+    width: 100%;
+    padding: 0 5%;
+  }
+  .nav-links a {
+    display: block !important;
+    width: 100% !important;
+    padding: 0.8rem 1rem !important;
+    margin: 0 !important;
+    text-align: center !important;
+    background-color: #0044cc;
+    color: #fff !important;
+    font-weight: bold !important;
+    border-radius: 50px !important;
   }
 
-  /* Hero ajusta tamaño y posición */
+  /* 2) Hero, texto y botón “Cotiza” */
   .hero-text {
     top: 120px;
     left: 5%;
@@ -616,12 +630,12 @@
     margin-top: 20px;
   }
   .btn-cotiza {
-    margin: 30px 0 0 0;
+    margin: 30px 0 0;
     font-size: 1rem;
     padding: 8px 16px;
   }
 
-  /* Servicios más estrechos */
+  /* 3) Servicios: tarjetas más estrechas */
   .servicios {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
@@ -635,84 +649,38 @@
     height: 80px;
   }
 
-  /* Teléfono y Seguridad apilados */
+  /* 4) Secciones Teléfono y Seguridad apiladas */
   .seccion-telefono,
   .seccion-seguridad {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 40px 5%;
     gap: 20px;
   }
+  .contenido-telefono,
+  .contenido-seguridad {
+    margin-bottom: 20px;
+  }
+
+  /* 5) Imágenes de Teléfono y Caja a ancho completo */
+  .imagen-telefono,
+  .imagen-cajas {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
   .imagen-telefono img,
   .imagen-cajas img {
-    max-width: 200%;
-    margin-left: 0;
-    margin-top: 0;
-    width: auto;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 !important;
   }
 
-  /* Marketplaces en dos líneas si hace falta */
-  .seccion-marketplaces h2 {
-    font-size: 2rem;
-  }
-  .seccion-marketplaces h3 {
-    font-size: 1.75rem;
-  }
-  .seccion-marketplaces p {
-    white-space: normal;
-    font-size: 0.9rem;
-    max-width: 90%;
-  }
-
-  /* Integraciones con logos más pequeños */
-  .integraciones-container {
-    gap: 20px;
-  }
-  .integracion-btn img {
-    max-height: 50px;
-  }
-
-  /* Modal y Whatsapp */
-  .modal-content {
-    width: 95%;
-    padding: 20px;
-  }
-  .whatsapp-float {
-    width: 60px;
-    height: 60px;
-    bottom: 10px;
-    right: 10px;
-  }
-}
-
-/* ===== Responsive Móviles (<= 480px) ===== */
-@media (max-width: 480px) {
-  /* Titulares más pequeños */
-  .hero-text h1 {
-    font-size: 1.75rem;
-  }
-  .hero-text p {
-    font-size: 1.1rem;
-  }
-
-  /* Botón cotiza compacto */
-  .btn-cotiza {
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
-
-  /* Iconos de lista más pequeños */
-  .item-con-icono {
-    gap: 10px;
-  }
-  .item-con-icono .icono {
-    width: 36px;
-    height: 36px;
-  }
-  .item-con-icono p {
-    font-size: 0.9rem;
-  }
-
-  /* Marketplaces aún más compacto */
+  /* 6) Marketplaces: texto compacto */
   .seccion-marketplaces {
     padding: 40px 5%;
   }
@@ -724,12 +692,56 @@
   }
   .seccion-marketplaces p {
     font-size: 0.85rem;
+    white-space: normal;
+    max-width: 90%;
   }
 
-  /* Footer y redes compacto */
+  /* 7) Integraciones: 3 logos por fila */
+  .integraciones-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 5%;
+  }
+  .integracion-btn img {
+    max-height: 50px;
+    object-fit: contain;
+  }
+
+  /* 8) Modal y WhatsApp */
+  .modal-content {
+    width: 95%!important;
+    padding: 20px!important;
+  }
+  .whatsapp-float {
+    width: 60px!important;
+    height: 60px!important;
+    bottom: 10px!important;
+    right: 10px!important;
+    transition: transform .3s, opacity .3s;
+    opacity: 1!important;
+  }
+  .whatsapp-float img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* 9) Tipografía e íconos más pequeños */
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+  .item-con-icono {
+    gap: 10px;
+  }
+  .item-con-icono .icono {
+    width: 36px;
+    height: 36px;
+  }
+  .item-con-icono p {
+    font-size: 0.9rem;
+  }
   footer {
     padding: 20px 5%;
     font-size: 0.9rem;
   }
 }
-
