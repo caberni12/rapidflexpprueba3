@@ -503,8 +503,29 @@
   display: none;
 }
 
-/* Mobile-only Hamburger & Layout */
+/* ===== Mobile-only Hamburger & Layout (≤480px) ===== */
 @media (max-width: 480px) {
+  /* 1) Ajustes generales de nav */
+  nav {
+    position: relative;
+    padding: 16px 4%;
+    height: auto;
+  }
+  .nav-logo img {
+    width: 80px;
+    height: auto;
+    margin: 0;
+  }
+
+  /* 2) Botón “Cotiza Ahora” siempre visible y legible */
+  .btn-cotiza {
+    display: inline-block !important;
+    margin: 12px 8px 0 auto;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+
+  /* 3) Oculta enlaces y muestra hamburguesa */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -519,6 +540,7 @@
     display: flex;
   }
 
+  /* 4) Icono hamburguesa */
   .hamburger {
     display: block;
     position: absolute;
@@ -527,6 +549,8 @@
     width: 28px;
     height: 24px;
     z-index: 1001;
+    background: transparent;
+    border: none;
     cursor: pointer;
   }
   .hamburger div {
@@ -537,7 +561,7 @@
     transition: 0.3s;
   }
 
-  /* Mantén texto e imagen lado a lado */
+  /* 5) Texto e imagen lado a lado */
   .seccion-telefono,
   .seccion-seguridad {
     flex-direction: row !important;
@@ -550,5 +574,15 @@
   .imagen-cajas {
     flex: 1 1 50%;
     max-width: 50%;
+  }
+
+  /* 6) Imágenes a pantalla completa y centradas */
+  .imagen-telefono img,
+  .imagen-cajas img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
   }
 }
