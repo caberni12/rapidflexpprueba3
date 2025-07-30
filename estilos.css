@@ -312,6 +312,7 @@
 .contenido-seguridad {
   max-width: 500px;
   flex: 1 1 480px;
+  margin-left: 60px;
 }
 
 .contenido-telefono h2,
@@ -320,6 +321,8 @@
   font-weight: 700;
   color: #0072ff; /* Títulos en azul */
   margin-bottom: 20px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 .item-con-icono {
@@ -354,8 +357,8 @@
   max-width: 200%;
   height: auto;
   margin: 0 auto;
-  margin-left: -700px;
-  margin-top: -75px;
+  margin-left: -600px;
+  margin-top: -45px;
 }
 
 
@@ -376,6 +379,8 @@
   margin-bottom: 8px;
   line-height: 1.2;
   letter-spacing: 0.5px;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 .seccion-marketplaces h3 {
@@ -385,6 +390,8 @@
   margin-bottom: 16px;
   line-height: 1.2;
   letter-spacing: 0.5px;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .seccion-marketplaces p {
@@ -394,9 +401,10 @@
   line-height: 1.6;
   max-width: 680px;
   margin: 0 auto;
-
   white-space: nowrap;
   max-width: none;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
 
 
 }
@@ -471,197 +479,76 @@
 /* Imagen dentro del botón */
 .integracion-btn img {
   display: block;
-  max-height: 150px;
+  max-height: 160px;
   width: auto;
 }
 
-/* ===== Responsive Tablets (<= 768px) ===== */
-@media (max-width: 768px) {
-  /* Nav pasa a columna y links legibles */
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 8px 4%;
-  }
-  .nav-links {
-    margin-top: 6px;
-    gap: 8px;
-  }
-  .nav-links a {
-    padding: 6px 10px;
-    font-size: 0.95rem;
-  }
-
-  /* Hero más compacto */
-  .hero-text {
-    top: 100px;
-    left: 4%;
-    right: 4%;
-  }
-  .hero-text h1 {
-    font-size: 1.8rem;
-  }
-  .hero-text p {
-    font-size: 1.1rem;
-    margin-top: 16px;
-  }
-  .btn-cotiza {
-    padding: 8px 14px;
-    font-size: 0.95rem;
-    margin: 20px 0 0 0;
-    margin-left: 0;
-  }
-
-  /* Servicios más estrechos */
-  .servicios {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 12px;
-    padding: 16px 4%;
-  }
-  .servicio {
-    max-width: 180px;
-    padding: 12px;
-  }
-  .servicio img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 6px;
-  }
-  .servicio h2 {
-    font-size: 1.2rem;
-  }
-  .servicio p {
-    font-size: 0.8rem;
-  }
-
-  /* Teléfono y Seguridad apilados */
-  .seccion-telefono,
-  .seccion-seguridad {
-    flex-direction: column;
-    padding: 32px 4%;
-    gap: 16px;
-  }
-  .item-con-icono {
-    gap: 10px;
-    margin-bottom: 12px;
-  }
-  .item-con-icono .icono {
-    width: 36px;
-    height: 36px;
-  }
-  .item-con-icono p {
-    font-size: 0.9rem;
-  }
-  .imagen-telefono img,
-  .imagen-cajas img {
-    max-width: 100%;
-    margin-left: 0;
-    margin-top: 0;
-    transform: scale(0.9);
-  }
-
-  /* Marketplaces compacto */
-  .seccion-marketplaces {
-    padding: 32px 4%;
-  }
-  .seccion-marketplaces h2 {
-    font-size: 1.8rem;
-  }
-  .seccion-marketplaces h3 {
-    font-size: 1.4rem;
-  }
-  .seccion-marketplaces p {
-    font-size: 0.85rem;
-    max-width: 100%;
-    white-space: normal;
-  }
-
-  /* Integraciones compactas */
-  .integraciones-container {
-    gap: 12px;
-    padding: 0 4%;
-  }
-  .integracion-btn {
-    padding: 10px;
-  }
-  .integracion-btn img {
-    max-height: 40px;
-  }
-
-  /* Footer y Whatsapp */
-  footer {
-    padding: 16px 4%;
-    font-size: 0.8rem;
-  }
-  .whatsapp-float {
-    width: 50px;
-    height: 50px;
-    bottom: 8px;
-    right: 8px;
-  }
+/* Botón siempre visible "Contáctanos" en nav */
+.contacto-btn {
+  padding: 6px 12px;
+  background-color: #00d1b2;
+  color: #fff !important;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-left: auto;
+}
+.contacto-btn:hover {
+  background-color: #009e92;
 }
 
-/* ===== Responsive Móviles (<= 480px) ===== */
+/* Oculta hamburguesa en escritorio */
+.hamburger {
+  display: none;
+}
+
+/* Mobile-only Hamburger & Layout */
 @media (max-width: 480px) {
-  /* Nav links más pequeños */
-  .nav-links a {
-    padding: 4px 8px;
-    font-size: 0.85rem;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .nav-links.open {
+    display: flex;
   }
 
-  /* Hero aún más compacto */
-  .hero-text h1 {
-    font-size: 1.5rem;
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 28px;
+    height: 24px;
+    z-index: 1001;
+    cursor: pointer;
   }
-  .hero-text p {
-    font-size: 1rem;
-  }
-  .btn-cotiza {
-    padding: 6px 12px;
-    font-size: 0.85rem;
+  .hamburger div {
+    width: 100%;
+    height: 3px;
+    background: #0072ff;
+    margin: 4px 0;
+    transition: 0.3s;
   }
 
-  /* Teléfono y Seguridad: padding mínimo */
+  /* Mantén texto e imagen lado a lado */
   .seccion-telefono,
   .seccion-seguridad {
-    padding: 20px 3%;
+    flex-direction: row !important;
+    padding: 20px 4%;
+    gap: 16px;
   }
-  .item-con-icono .icono {
-    width: 30px;
-    height: 30px;
-  }
-  .item-con-icono p {
-    font-size: 0.85rem;
-  }
-
-  /* Marketplaces ultra compacto */
-  .seccion-marketplaces {
-    padding: 20px 3%;
-  }
-  .seccion-marketplaces h2 {
-    font-size: 1.6rem;
-  }
-  .seccion-marketplaces h3 {
-    font-size: 1.2rem;
-  }
-  .seccion-marketplaces p {
-    font-size: 0.75rem;
-  }
-
-  /* Integraciones super comprimidas */
-  .integraciones-container {
-    gap: 8px;
-  }
-  .integracion-btn {
-    padding: 8px;
-  }
-  .integracion-btn img {
-    max-height: 30px;
-  }
-
-  /* Footer y redes sociales */
-  footer {
-    padding: 14px 3%;
-    font-size: 0.8rem;
+  .seccion-telefono .contenido-telefono,
+  .seccion-seguridad .contenido-seguridad,
+  .imagen-telefono,
+  .imagen-cajas {
+    flex: 1 1 50%;
+    max-width: 50%;
   }
 }
